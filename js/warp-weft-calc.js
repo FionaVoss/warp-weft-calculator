@@ -13,12 +13,13 @@ $(document).ready(function() {
   $("#submit").on(
     "click",
     function() {
-      var wovenLength = parseInt($("#wovenLength").val());
-      var warpTakeUp = parseInt($("#warpTakeUp").val());
-      var loomWaste = parseInt($("#loomWaste").val());
-      var sampling = parseInt($("#sampling").val());
-      var warpLength = calculateWarpLength(wovenLength, warpTakeUp, loomWaste, sampling);
-      $("#warpLength").innerHTML(warpLength);
+      //TODO: use these variables
+      // var wovenLengthVal = parseInt($("#wovenLength").val());
+      // var warpTakeUpVal = parseInt($("#warpTakeUp").val());
+      // var loomWasteVal = parseInt($("#loomWaste").val());
+      // var samplingVal = parseInt($("#sampling").val());
+      // var warpLengthVal = calculateWarpLength(wovenLengthVal, warpTakeUpVal, loomWasteVal, samplingVal);
+      $("#warpLength").text(calculateWarpLength(parseInt($("#wovenLength").val()), parseInt($("#warpTakeUp").val()), parseInt($("#loomWaste").val()), parseInt($("#sampling").val())));
     });
 
 
