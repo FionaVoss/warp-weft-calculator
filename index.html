@@ -7,11 +7,11 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+  <!-- jQuery -->
+  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-  <!-- jQuery -->
-  <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 
   <!-- JavaScript -->
   <script src="js/warp-weft-calc.js"></script>
@@ -31,13 +31,13 @@
           <input type="number" id="wpi"/>
           <br/>
           <label for="woven_length">Woven length of project:</label>
-          <input type="number" id="woven_length"/> inches
+          <input type="number" id="wovenLength"/> inches
           <br/>
           <label for="woven_width">Woven width of project</label>
           <input type="number" id="woven_width"/> inches
           <h2>Advanced Settings</h2>
-          <label for="warp_takeup">Takeup (warp):</label>
-          <input type="number" id="warp_takeup" value="10"/>%
+          <label for="warpTakeUp">Takeup (warp):</label>
+          <input type="number" id="warpTakeUp" value="10"/>%
           <br/>
           <label for="loom_waste">Loom waste:</label>
           <input type="number" id="loom_waste" value="24"/> inches
@@ -51,7 +51,7 @@
           <input type="button" id="submit" value="Calculate"/>
         </form>
         <h2>Results</h2>
-        Length of each warp thread: (inches)
+        Length of each warp thread: <span id="warpLength"></span> (inches)
         <br>
         Number of warp threads:
         <br>
