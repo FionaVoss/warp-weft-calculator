@@ -4,10 +4,14 @@ This project helps weavers calculate how much yarn they will need to weave a pie
 
 ## Completed
 * Calculate warp length
+* Calculate number of warp threads
 
 ## To Do
-* Calculate number of warp threads
+* Show sett
 * Calculate yarn needed for warp
-* Calculate yarn needed for Weft
+* Calculate yarn needed for weft
 * Calculate total yarn required for project
+* Support fractional input
 * Support metric &amp; imperial units
+* Support different setts for warp & weft
+* Make enter key submit form

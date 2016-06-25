@@ -6,6 +6,13 @@ function calculateWarpLength(wovenLength, takeUp, loomWaste, sampling) {
   return(wovenLength + (wovenLength * takeUp / 100) + loomWaste + sampling);
 }
 
+// calculates number of warp threads
+// calculateWarpThreads(10, 10, 16) --> 88
+// calculateWarpThreads(12, 10, 24) --> 158.4
+function calculateWarpThreads(wovenWidth, takeUp, wrapsPerInch) {
+  return(wovenWidth * wrapsPerInch / 2 * (100 + takeUp) / 100);
+};
+
 // Document ready function
 $(document).ready(function() {
 
@@ -20,7 +27,9 @@ $(document).ready(function() {
       // var samplingVal = parseInt($("#sampling").val());
       // var warpLengthVal = calculateWarpLength(wovenLengthVal, warpTakeUpVal, loomWasteVal, samplingVal);
       $("#warpLength").text(calculateWarpLength(parseInt($("#wovenLength").val()), parseInt($("#warpTakeUp").val()), parseInt($("#loomWaste").val()), parseInt($("#sampling").val())));
-    });
+
+      $("#warpThreads").text(calculateWarpThreads(parseInt($("#wovenWidth").val()), parseInt($("#weftTakeUp").val()), parseInt($("#wrapsPerInch").val())));
+    }); //end of submit onclick function
 
 
-});
+}); // end of document ready function

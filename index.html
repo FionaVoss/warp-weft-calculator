@@ -27,33 +27,33 @@
       <div class="panel-body">
         <form>
           <h2>Required Fields</h2>
-          <label for="wpi">Wraps per inch:</label>
-          <input type="number" id="wpi"/>
+          <label for="wrapsPerInch">Wraps per inch:</label>
+          <input type="number" id="wrapsPerInch"/>
           <br/>
           <label for="woven_length">Woven length of project:</label>
           <input type="number" id="wovenLength"/> inches
           <br/>
-          <label for="woven_width">Woven width of project</label>
-          <input type="number" id="woven_width"/> inches
+          <label for="wovenWidth">Woven width of project</label>
+          <input type="number" id="wovenWidth"/> inches
           <h2>Advanced Settings</h2>
           <label for="warpTakeUp">Takeup (warp):</label>
           <input type="number" id="warpTakeUp" value="10"/>%
           <br/>
-          <label for="loom_waste">Loom waste:</label>
+          <label for="loomWaste">Loom waste:</label>
           <input type="number" id="loomWaste" value="24"/> inches
           <br/>
           <label for="sampling">Extra warp length for sampling</label>
           <input type="number" id="sampling" value="10"/> inches
           <br/>
-          <label for="weft_takeup">Takeup (weft):</label>
-          <input type="number" id="weft_takeup" value="10"/>%
+          <label for="weftTakeUp">Takeup (weft):</label>
+          <input type="number" id="weftTakeUp" value="10"/>%
           <br/>
           <input type="button" id="submit" value="Calculate"/>
         </form>
         <h2>Results</h2>
         Length of each warp thread: <span id="warpLength"></span> (inches)
         <br>
-        Number of warp threads:
+        Number of warp threads: <span id="warpThreads"></span>
         <br>
         Amount of yarn needed for warp: (yards)
         <br>
