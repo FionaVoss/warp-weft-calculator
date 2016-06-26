@@ -3,7 +3,14 @@
 // calculateWarpLength(10, 10, 10, 10) --> 31
 function calculateWarpLength(wovenLength, takeUp, loomWaste, sampling) {
   return(wovenLength + (100 + takeUp) / 100 + loomWaste + sampling);
-}
+};
+
+// calculates width of warp in reed
+// calculateWidthInReed(10, 10) --> 11
+// calculateWidthInReed(20, 15) --> 23
+function calculateWidthInReed(wovenWidth, takeUp) {
+  return(wovenWidth * (100 + takeUp) / 100);
+};
 
 // calculates number of warp threads
 // calculateWarpThreads(10, 10, 8) --> 88
@@ -34,6 +41,10 @@ $(document).ready(function() {
       var warpLength = calculateWarpLength(parseInt($("#wovenLength").val()), parseInt($("#warpTakeUp").val()), parseInt($("#loomWaste").val()), parseInt($("#sampling").val()));
       $("#warpLength").text(warpLength);
 
+      //calculate and display width of warp in reed
+      var widthInReed = calculateWidthInReed(parseInt($("#wovenWidth").val()), parseInt($("#warpTakeUp").val()));
+      $("#widthInReed").text(widthInReed);
+
       //calculate and display warp threads
       var warpThreads = calculateWarpThreads(parseInt($("#wovenWidth").val()), parseInt($("#weftTakeUp").val()), sett);
       $("#warpThreads").text(warpThreads);
@@ -41,6 +52,8 @@ $(document).ready(function() {
       //calculate and display warp yarn
       var warpYarn = calculateWarpYarn(warpLength, warpThreads);
       $("#warpYarn").text(warpYarn);
+
+
     }); //end of submit onclick function
 
 

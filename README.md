@@ -8,12 +8,14 @@ This project helps weavers calculate how much yarn they will need to weave a pie
 * Show sett
 * Use sett variable instead of wraps per inch to calculate number of warp threads
 * Calculate yarn needed for warp
+* Calculate and display width of warp in reed
 
 ## To Do
+* Use widthInReed variable for calculations
 * Calculate yarn needed for weft
 * Calculate total yarn required for project
 * Support fractional input
-* Round calculations to the nearest tenth
+* Round calculations to the nearest hundredth
 * Support metric &amp; imperial units
 * Support different setts for warp & weft
 * Make enter key submit form
