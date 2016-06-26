@@ -13,10 +13,10 @@ function calculateWidthInReed(wovenWidth, takeUp) {
 };
 
 // calculates number of warp threads
-// calculateWarpThreads(10, 10, 8) --> 88
-// calculateWarpThreads(12, 10, 12) --> 158.4
-function calculateWarpThreads(wovenWidth, takeUp, sett) {
-  return(wovenWidth * sett * (100 + takeUp) / 100);
+// calculateWarpThreads(11, 8) --> 88
+// calculateWarpThreads(12, 12) --> 144
+function calculateWarpThreads(widthInReed, sett) {
+  return(widthInReed * sett);
 };
 
 // calculates yarn needed for warp in yards
@@ -46,7 +46,7 @@ $(document).ready(function() {
       $("#widthInReed").text(widthInReed);
 
       //calculate and display warp threads
-      var warpThreads = calculateWarpThreads(parseInt($("#wovenWidth").val()), parseInt($("#weftTakeUp").val()), sett);
+      var warpThreads = calculateWarpThreads(widthInReed, sett);
       $("#warpThreads").text(warpThreads);
 
       //calculate and display warp yarn
