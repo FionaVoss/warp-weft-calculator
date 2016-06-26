@@ -26,6 +26,9 @@ $(document).ready(function() {
       // var loomWasteVal = parseInt($("#loomWaste").val());
       // var samplingVal = parseInt($("#sampling").val());
       // var warpLengthVal = calculateWarpLength(wovenLengthVal, warpTakeUpVal, loomWasteVal, samplingVal);
+      var sett = parseInt($("#wrapsPerInch").val())/2;
+      $("#sett").text(sett);
+
       $("#warpLength").text(calculateWarpLength(parseInt($("#wovenLength").val()), parseInt($("#warpTakeUp").val()), parseInt($("#loomWaste").val()), parseInt($("#sampling").val())));
 
       $("#warpThreads").text(calculateWarpThreads(parseInt($("#wovenWidth").val()), parseInt($("#weftTakeUp").val()), parseInt($("#wrapsPerInch").val())));
