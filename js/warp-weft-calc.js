@@ -1,9 +1,8 @@
 // calculates length of each warp thread
-// warp_length = woven_length * take-up + loom waste + sampling
 // calculateWarpLength(10, 10, 24, 10) --> 45
 // calculateWarpLength(10, 10, 10, 10) --> 31
 function calculateWarpLength(wovenLength, takeUp, loomWaste, sampling) {
-  return(wovenLength + (wovenLength * takeUp / 100) + loomWaste + sampling);
+  return(wovenLength + (100 + takeUp) / 100 + loomWaste + sampling);
 }
 
 // calculates number of warp threads
@@ -13,6 +12,13 @@ function calculateWarpThreads(wovenWidth, takeUp, sett) {
   return(wovenWidth * sett * (100 + takeUp) / 100);
 };
 
+// calculates yarn needed for warp in yards
+// calculateWarpYarn(36, 36) --> 36
+// calculateWarpYarn(24, 30) --> 20
+function calculateWarpYarn(warpLength, warpThreads) {
+  return(warpLength/36 * warpThreads);
+}
+
 // Document ready function
 $(document).ready(function() {
 
@@ -20,18 +26,21 @@ $(document).ready(function() {
   $("#submit").on(
     "click",
     function() {
-      //TODO: use these variables
-      // var wovenLengthVal = parseInt($("#wovenLength").val());
-      // var warpTakeUpVal = parseInt($("#warpTakeUp").val());
-      // var loomWasteVal = parseInt($("#loomWaste").val());
-      // var samplingVal = parseInt($("#sampling").val());
-      // var warpLengthVal = calculateWarpLength(wovenLengthVal, warpTakeUpVal, loomWasteVal, samplingVal);
+      //calculate and display sett
       var sett = parseInt($("#wrapsPerInch").val())/2;
       $("#sett").text(sett);
 
-      $("#warpLength").text(calculateWarpLength(parseInt($("#wovenLength").val()), parseInt($("#warpTakeUp").val()), parseInt($("#loomWaste").val()), parseInt($("#sampling").val())));
+      //calculate and display warp length
+      var warpLength = calculateWarpLength(parseInt($("#wovenLength").val()), parseInt($("#warpTakeUp").val()), parseInt($("#loomWaste").val()), parseInt($("#sampling").val()));
+      $("#warpLength").text(warpLength);
 
-      $("#warpThreads").text(calculateWarpThreads(parseInt($("#wovenWidth").val()), parseInt($("#weftTakeUp").val()), sett));
+      //calculate and display warp threads
+      var warpThreads = calculateWarpThreads(parseInt($("#wovenWidth").val()), parseInt($("#weftTakeUp").val()), sett);
+      $("#warpThreads").text(warpThreads);
+
+      //calculate and display warp yarn
+      var warpYarn = calculateWarpYarn(warpLength, warpThreads);
+      $("#warpYarn").text(warpYarn);
     }); //end of submit onclick function
 
 
